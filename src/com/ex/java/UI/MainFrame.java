@@ -1,0 +1,37 @@
+package com.ex.java.UI;
+
+import javax.swing.JFrame;
+import javax.swing.JTabbedPane;
+
+public class MainFrame extends JFrame {
+	private JTabbedPane tp;
+	
+	private AddMember addMem;
+	private FindMember findMem;
+	private AllMember allMem;
+	
+	public MainFrame() {
+		// tap È°¿ë
+		tp = new JTabbedPane();
+		addMem = new AddMember();
+		findMem = new FindMember();
+		allMem = new AllMember();
+		
+		tp.addTab("¸â¹ö ÀÔ·Â", addMem);
+		tp.addTab("¸â¹ö Á¶È¸", findMem);
+		tp.addTab("¸â¹ö ÀüÃ¼", allMem);
+		
+		getContentPane().add(tp);
+		setTitle("¸â¹ö °ü¸®");
+		
+		setSize(500, 400);
+		setVisible(true);
+		setDefaultCloseOperation(EXIT_ON_CLOSE);
+	}
+
+	public static void main(String[] args) {
+		new MainFrame(); // ½ÇÇà
+
+	}
+
+}
